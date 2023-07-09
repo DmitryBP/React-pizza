@@ -1,31 +1,55 @@
 @import '../variables';
 
 .categories {
-  ul {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  ul li {
+    background-color: #f9f9f9;
+    padding: 13px 30px;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+    @include noselect();
 
-    li {
-      background-color: #f9f9f9;
-      padding: 13px 30px;
-      border-radius: 30px;
-      margin-right: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.1s ease-in-out;
-      @include noselect();
-
-      &:hover {
-        background-color: darken(#f9f9f9, 2%);
-      }
-
-      &:active {
-        background-color: darken(#f9f9f9, 5%);
-      }
-
-      &.active {
-        background-color: #282828;
-        color: #fff;
-      }
+    &:hover {
+      background-color: darken(#f9f9f9, 2%);
     }
+
+    &:active {
+      background-color: darken(#f9f9f9, 5%);
+    }
+
+    &.active {
+      background-color: #282828;
+      color: #fff;
+    }
+  }
+}
+.menu {
+  display: flex;
+}
+.btn {
+  display: none;
+  background-color: #ffdf8c;
+  border-radius: 2px;
+  padding: 2px;
+  border: none;
+  
+}
+@media (max-width: 1000px) {
+  .menu {
+    display: none;
+  }
+  .active {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+  }
+  .btn {
+    display: flex;
   }
 }

@@ -6,8 +6,21 @@
 
   .container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+  }
+  @media(max-width:650px){
+   .container{
+      justify-content: center;
+      gap: 40px
+    }
+    .header__logo img {
+      display: none;
+    }
+    .header__logo div {
+      text-align: center;
+    }
   }
 
   &__logo {
